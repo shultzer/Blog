@@ -13,6 +13,15 @@
 
     Route::get('/', 'IndexController@index');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+   /* Route::get('/{user}/detail ', function ($id){
+
+        return view('detail',['user'=>$id]);
+    });*/
+
+    Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/{user}/detail ', 'IndexController@show_user');
