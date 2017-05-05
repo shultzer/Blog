@@ -7,24 +7,25 @@ use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
 {
+    private $id;
+    private $title;
+    private $complete;
+
     public function index()
     {
-        $todo = DB::select('select * from users where active = ?', [1]);
+        $todo = DB::table('todo')->get();
 
-        //global $queryBuilder;
-        //$tasks = App::get('db')->table('todo')->all();
-
-        return view('todo', ['todo' => $todo]);
+         return view('todo', ['todo' => $todo]);
     }
 
     public function add()
     {
-        global $queryBuilder;
+        DB::table('todo')->insert(['title'=>$_REQUEST['title']]);
 
-        $queryBuilder->table('todo')->insert([
-            'title' => Request::get('title', '')]);
+        $url = array_key_exists('HTTP_REFERER', $_SERVER) ? $_SERVER['HTTP_REFERER'] : '/';
+        header('Location: ' . $url);
 
-        Request::back();
+        return view('todo');
     }
     public function del ()
     {
@@ -51,5 +52,43 @@ class TodoController extends Controller
         }
     }
 
+    /**
+     * @return mixed
+     */
+    public function getComplete()
+    {
+        return $this->complete;
+    }
 
+    /**
+     * @param mixed $complete
+     */
+    public function setComplete($complete)
+    {
+        $this->complete = $complete;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

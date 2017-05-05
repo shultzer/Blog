@@ -1,14 +1,14 @@
-@include('todo')
-<body>
+
+<body style="font-family: Courier">
 <h1 class="container">Todo List</h1>
 
 <div  class="container">
 
-    <form action="/add-task" method="post" class="form-inline">
+    <form action="/add-task" method="post" class="form-control">
         <div class="form-inline">
             <label for="exampleInputEmail1">Add task</label>
             <input type="text" name="title" class="form-control" id="exampleInputEmail1">
-            <button class="btn btn-primary">Добавить</button>
+            <button class="button-blue">Добавить</button>
         </div>
     </form>
 
@@ -17,21 +17,21 @@
 
 <div  class="container">
     <form action="/del-task" method="post">
-        <?php /** @var \Model\Todo[] $tasks */ ?>
-        <?php if(!empty($tasks)): ?>
 
-        <?php foreach($tasks as $task): ?>
+        <?php if(!empty($todo)): ?>
+
+        <?php foreach($todo as $task): ?>
         <div class="checkbox">
             <label>
 
-                <input <?= $task->getComplete() ? 'checked' : '' ?>
+                <input <?= $task->complete ? 'checked' : '' ?>
                        type="checkbox"
                        name="delitem[]"
-                       value="<?= $task['id'] ?>" >
+                       value="<?= $task->id ?>" >
 
-                <?= $task->getComplete() ? '<s>' :''?>
-                <?= $task->getTitle() ?>
-                <?=$task->getComplete() ? '</s>' :''?>
+                <?= $task->complete ? '<s>' :''?>
+                <?= $task->title ?>
+                <?=$task->complete ? '</s>' :''?>
             </label>
         </div>
         <?php endforeach; ?>

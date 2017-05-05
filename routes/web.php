@@ -12,16 +12,8 @@
 */
 
     Route::get('/', 'IndexController@index');
-
-
-
-   /* Route::get('/{user}/detail ', function ($id){
-
-        return view('detail',['user'=>$id]);
-    });*/
-
-    Auth::routes();
-
-    Route::get('/home', 'HomeController@index')->name('home');
-
+    Route::get('/todo', 'TodoController@index');
+    Route::post('/add-task', 'TodoController@add');
+    Route::post('del-task', 'TodoController@del');
+    Route::get('parse', 'ParserController@index');
     Route::get('/{user}/detail ', 'IndexController@show_user');
