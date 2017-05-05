@@ -1,1 +1,0 @@
-<h1>@foreach($users as $user){{$user}}</h1>

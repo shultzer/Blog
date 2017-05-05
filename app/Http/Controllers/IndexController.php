@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -20,9 +20,10 @@ class IndexController extends Controller
    }
     public function show_user ($user)
     {
-
-        return view('detail', ['user'=>$user,
-                                    'age'=>$this->users['user']]);
+        $age=$this->users[$user];
+        return view('profiles.index', ['user'=>$user,
+                                    'age'=>$age,
+                                    'users'=>$this->users]);
     }
 
     /**
