@@ -53,7 +53,7 @@
                 <h4>Users</h4>
                 <ol class="list-unstyled">
                     @foreach($users as $user=> $age)
-                    <li><a href="/{{$user}}/detail">{{$user}}</a></li>
+                    <li><a href="/blog/{{$user}}/detail">{{$user}}</a></li>
                         @endforeach
                 </ol>
             </div>
