@@ -11,9 +11,9 @@
 |
 */
 
-    Route::get('/', 'IndexController@index');
-    Route::get('/todo', 'TodoController@index');
-    Route::post('/add-task', 'TodoController@add');
+    Route::get('blog/', 'IndexController@index');
+    Route::get('blog/todo', 'TodoController@index');
+    Route::post('blog/add-task', 'TodoController@add');
     Route::post('del-task', 'TodoController@del');
     Route::get('parse', 'ParserController@index');
-    Route::get('/{user}/detail ', 'IndexController@show_user');
+    Route::get('blog/{user}/detail ', 'IndexController@show_user');

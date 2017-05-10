@@ -12,10 +12,10 @@
     <title>Blog Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-     <link href="/public/css/bootstrap.css" rel="stylesheet">
+     <link href="/blog/public/css/bootstrap.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- Custom styles for this template -->
-    <link href="/public/css/blog.css" rel="stylesheet">
+    <link href="/blog/public/css/blog.css" rel="stylesheet">
 
 </head>
 
@@ -24,7 +24,7 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="">Home</a>
+            <a class="blog-nav-item active" href="/blog">Home</a>
             <a class="blog-nav-item" href="#">New features</a>
             <a class="blog-nav-item" href="#">Press</a>
             <a class="blog-nav-item" href="#">New hires</a>
@@ -53,7 +53,7 @@
                 <h4>Users</h4>
                 <ol class="list-unstyled">
                     @foreach($users as $user=> $age)
-                    <li><a href="/{{$user}}/detail">{{$user}}</a></li>
+                    <li><a href="/blog/{{$user}}/detail">{{$user}}</a></li>
                         @endforeach
                 </ol>
             </div>
