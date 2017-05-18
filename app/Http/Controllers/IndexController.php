@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DB;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -14,31 +15,19 @@ class IndexController extends Controller
    public function index ()
    {
 
+        $articles = DB::all();
 
-
-       return view('index', ['users' => $this->users]);
+       return view('index', ['articles' => $articles],
+                                  ['users' => $this->users]);
    }
     public function show_user ($user)
     {
         $age=$this->users[$user];
+
         return view('profiles.index', ['user'=>$user,
                                     'age'=>$age,
                                     'users'=>$this->users]);
     }
 
-    /**
-     * @return array
-     */
-    public function getUsers (): array
-    {
-        return $this->users;
-    }
 
-    /**
-     * @param array $users
-     */
-    public function setUsers (array $users)
-    {
-        $this->users = $users;
-    }
 }
