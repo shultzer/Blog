@@ -1,6 +1,14 @@
 @include('head')
     <div class="col-sm-8 blog-main">
-
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     <form action="add" method="post" class="form-group">
         <input type="hidden" value="{{ csrf_token() }}" name="{{'_token' }}">
 
