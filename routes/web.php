@@ -14,8 +14,10 @@
 
 
 
-    Route::get ('/', 'IndexController@index');
+    Route::get ('/', 'IndexController@index')->name('/');
     Route::get ('add', 'UserController@form');
+    Route::get ('/{slug}', 'IndexController@show_article');
+
     Route::post ('add', 'UserController@add_article');
 
     Route::get('{user}/detail ', 'IndexController@show_user');
