@@ -278,6 +278,7 @@ class ComposerStaticInit180827855b3b8183f0b9fbaeb5444ce0
     );
 
     public static $classMap = array (
+        'AddForeignKey' => __DIR__ . '/../..' . '/database/migrations/2017_05_22_192856_Add_foreign_key.php',
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
