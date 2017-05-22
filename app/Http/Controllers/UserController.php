@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\DB;
+use App\Article;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -29,11 +29,31 @@ class UserController extends Controller
       'body' => 'required|max:2000'
     ]);
 
-      $p = DB::create($request->except('_token'));
-      $p->save();
+    $p = Article::create($request->except('_token'));
+    $p->save();
 
-      return redirect()->route('/');
+    return redirect()->route('/');
 
-   }
+  }
+
+
+  public function edit_article_form (Article $articles, $slug){
+
+    $article = $articles->where(['slug' => $slug])->first();
+
+
+
+    return view('user.edit_article', ['article' => $article]);
+
+  }
+
+
+  public function update_article (Article $articles, Request $request, $slug) {
+
+
+    $articles->where(['slug' => $slug])->update($request->except(['_token', '_method']));
+
+    return redirect()->route('/');
+  }
 
 }

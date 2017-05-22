@@ -1,4 +1,5 @@
 <?php echo $__env->make('head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
     <div class="row">
 
        <?php echo $__env->make('body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

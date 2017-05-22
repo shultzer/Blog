@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\DB;
+use App\Article;
 use Illuminate\Http\Request;
 
  class IndexController extends Controller
@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
   public function index ()
    {
 
-        $articles = DB::latest('created_at')->paginate(3);
+        $articles = Article::latest('created_at')->paginate(3);
 
        return view('index', ['articles' => $articles],
                                   ['users' => $this->users]);
@@ -29,8 +29,8 @@ use Illuminate\Http\Request;
                                     'users'=>$this->users]);
     }
 
-  public function show_article ($id){
-      $article = DB::where('id', $id)->first();
+  public function show_article ($slug){
+      $article = Article::where('slug', $slug)->first();
       return view('show_article', ['article' => $article]);
 
   }

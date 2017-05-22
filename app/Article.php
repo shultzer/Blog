@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DB extends Model
+class Article extends Model
 {
-    protected $table = 'articles';
+
   protected $fillable = [
-    'title', 'body', 'short_description', 'image'
+    'title', 'body', 'short_description'
   ];
 
 
@@ -21,6 +21,7 @@ class DB extends Model
   {
     return strtoupper($this->attributes['title']);
   }
+
   /**
    * Get news by slug
    *
@@ -32,4 +33,6 @@ class DB extends Model
   {
     return $query->where('slug', $slug);
   }
+
+
 }
