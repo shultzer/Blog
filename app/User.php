@@ -26,8 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-  public function user(){
-    return $this->hasMany('App\Articles');
+  public function article(){
+    return $this->hasMany(Article::class);
 
+  }
+  public function attachNews(Request $request)
+  {
+    return $this->article()->create($request->except('_token'));
   }
 }
