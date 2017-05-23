@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 
   public function form (){
-
 
     return view('user.add_article');
 

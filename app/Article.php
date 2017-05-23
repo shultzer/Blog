@@ -8,7 +8,7 @@ class Article extends Model
 {
 
   protected $fillable = [
-    'title', 'body', 'short_description'
+    'title', 'body', 'short_description','user_id'
   ];
 
 
@@ -34,5 +34,8 @@ class Article extends Model
     return $query->where('slug', $slug);
   }
 
+  public function user(){
+    return $this->belongsTo('App\User');
 
+  }
 }

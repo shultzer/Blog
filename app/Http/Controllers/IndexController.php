@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\User;
 use Illuminate\Http\Request;
 
  class IndexController extends Controller
@@ -15,6 +16,8 @@ use Illuminate\Http\Request;
   public function index ()
    {
 
+     $user = User::find(1);
+     dump($user->article);
         $articles = Article::latest('created_at')->paginate(3);
 
        return view('index', ['articles' => $articles],

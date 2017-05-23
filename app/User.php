@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
   public function article(){
-    return $this->hasMany(Article::class);
+    return $this->hasMany('App\Article');
 
   }
   public function attachNews(Request $request)
