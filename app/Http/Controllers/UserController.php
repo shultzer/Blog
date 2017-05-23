@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -28,8 +29,8 @@ class UserController extends Controller
       'short_description' => 'required|max:255',
       'body' => 'required|max:2000'
     ]);
-
-    $p = Article::create($request->except('_token'));
+    $user = Auth::user();
+    $p = $user->article()->create($request->except('_token'));
     $p->save();
 
     return redirect()->route('/');

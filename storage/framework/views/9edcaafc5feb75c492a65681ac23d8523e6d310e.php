@@ -12,8 +12,9 @@
             <div class="sidebar-module">
                 <h4>Users</h4>
                 <ol class="list-unstyled">
-                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user=> $age): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li><a href="/<?php echo e($user); ?>/detail"><?php echo e($user); ?></a></li>
+                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <li><a href="/<?php echo e($user->name); ?>/detail"><?php echo e($user->name); ?></a></li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ol>
             </div>

@@ -25,17 +25,23 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="/">Главная</a>
-            <a class="blog-nav-item" href="/add">Опубликовать статью</a>
-            <a class="blog-nav-item" href="#">Press</a>
-            <a class="blog-nav-item" href="#">New hires</a>
-            <a class="blog-nav-item" href="#">About</a>
+            @php($url = \Illuminate\Support\Facades\Request::url())
+           
+            <a class="blog-nav-item @if($url == 'http://blog')active @endif" href="/">Главная</a>
+
+            @if(\Illuminate\Support\Facades\Auth::check())
+            <a class="blog-nav-item @if($url == 'http://blog/add')active @endif" href="/add">Опубликовать статью</a>
+            @endif
+
+
+
             <div style="float: right">@if (Auth::guest())
                 <a class="blog-nav-item" href="{{ route('login') }}">Login</a>
                 <a class="blog-nav-item" href="{{ route('register') }}">Register</a>
             @else
             </div>
 
+            <div style="float: right">
                     <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
@@ -50,7 +56,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-
+            </div>
 
 
             @endif

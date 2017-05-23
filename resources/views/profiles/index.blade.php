@@ -12,8 +12,8 @@
             <div class="sidebar-module">
                 <h4>Users</h4>
                 <ol class="list-unstyled">
-                    @foreach($users as $user=> $age)
-                    <li><a href="/{{$user}}/detail">{{$user}}</a></li>
+                    @foreach($users as $user)
+                    <li><a href="/{{$user->name}}/detail">{{$user->name}}</a></li>
                         @endforeach
                 </ol>
             </div>

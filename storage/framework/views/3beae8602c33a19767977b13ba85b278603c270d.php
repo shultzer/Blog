@@ -25,17 +25,23 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="/">Главная</a>
-            <a class="blog-nav-item" href="/add">Опубликовать статью</a>
-            <a class="blog-nav-item" href="#">Press</a>
-            <a class="blog-nav-item" href="#">New hires</a>
-            <a class="blog-nav-item" href="#">About</a>
+            <?php ($url = \Illuminate\Support\Facades\Request::url()); ?>
+           
+            <a class="blog-nav-item <?php if($url == 'http://blog'): ?>active <?php endif; ?>" href="/">Главная</a>
+
+            <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
+            <a class="blog-nav-item <?php if($url == 'http://blog/add'): ?>active <?php endif; ?>" href="/add">Опубликовать статью</a>
+            <?php endif; ?>
+
+
+
             <div style="float: right"><?php if(Auth::guest()): ?>
                 <a class="blog-nav-item" href="<?php echo e(route('login')); ?>">Login</a>
                 <a class="blog-nav-item" href="<?php echo e(route('register')); ?>">Register</a>
             <?php else: ?>
             </div>
 
+            <div style="float: right">
                     <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
                         <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
                     </a>
@@ -51,7 +57,7 @@
                                 <?php echo e(csrf_field()); ?>
 
                             </form>
-
+            </div>
 
 
             <?php endif; ?>

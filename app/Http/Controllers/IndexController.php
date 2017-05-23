@@ -9,30 +9,38 @@ use Illuminate\Http\Request;
  class IndexController extends Controller
 {
     public $users=[
-'John'=>'12',
+'user2'=>'12',
 'Alex'=>'24',
 'Pamella'=>'40'];
 
-  public function index ()
+  public function index (Request $request)
    {
+     $url = $request->url();
 
-     $user = User::find(1);
-     dump($user->article);
+
+        $users = User::all();
+
         $articles = Article::latest('created_at')->paginate(3);
 
        return view('index', ['articles' => $articles],
-                                  ['users' => $this->users]);
+                                  ['users' => $users],
+                                   [ 'url' => $url]);
    }
+
+
+
     public function show_user ($user)
     {
-        $age=$this->users[$user];
-
-        return view('profiles.index', ['user'=>$user,
-                                    'age'=>$age,
-                                    'users'=>$this->users]);
+      $users = User::all();
+        return view('profiles.index', ['user'=> $user], ['users' => $users]);
     }
 
+
+
+
+
   public function show_article ($slug){
+
       $article = Article::where('slug', $slug)->first();
       return view('show_article', ['article' => $article]);
 
