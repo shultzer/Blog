@@ -26,7 +26,7 @@
     <div class="container">
         <nav class="blog-nav">
             <?php ($url = \Illuminate\Support\Facades\Request::url()); ?>
-           
+
             <a class="blog-nav-item <?php if($url == 'http://blog'): ?>active <?php endif; ?>" href="/">Главная</a>
 
             <?php if(\Illuminate\Support\Facades\Auth::check()): ?>

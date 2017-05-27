@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-  public function form (){
+  public function form (Tag $tag){
 
-    return view('user.add_article');
+    return view('user.add_article',['tag' => $tag] );
 
   }
 
@@ -29,9 +29,12 @@ class UserController extends Controller
       'short_description' => 'required|max:255',
       'body' => 'required|max:2000'
     ]);
+
     $user = Auth::user();
     $p = $user->article()->create($request->except('_token'));
     $p->save();
+
+
 
     return redirect()->route('/');
 
@@ -51,7 +54,12 @@ class UserController extends Controller
 
   public function update_article (Article $articles, Request $request, $slug) {
 
-
+    $this->validate($request, [
+      'title' => 'required|unique:articles|max:140,'.$articles->id,
+      'slug' => 'reqiured|unique:articles|max:255',
+      'short_description' => 'required|max:255',
+      'body' => 'required|max:2000'
+    ]);
     $articles->where(['slug' => $slug])->update($request->except(['_token', '_method']));
 
     return redirect()->route('/');

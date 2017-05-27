@@ -8,8 +8,10 @@
                 <p>Добавлено {{ $article->updated_at }} </p>
 
                 <p class="blog-post">{{ $article->body }}</p>
+            @if(\Illuminate\Support\Facades\Auth::check())
                 @if(\Illuminate\Support\Facades\Auth::user()->name == $article->user->name)
                 <a href="/article/{{ $article->slug }}/edit">Редактировать</a>
+                    @endif
                     @endif
             </div><!-- /.blog-post -->
 

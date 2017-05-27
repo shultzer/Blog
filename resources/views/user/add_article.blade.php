@@ -24,6 +24,10 @@
         <label for="body" >Текст статьи</label>
         <textarea  rows="10" class="form-control"  class="form-group" id="body" name="body"></textarea>
 <br>
+
+        @foreach($tags as $tag)
+        <input type="checkbox" class="checkbox" name="{{ $tag->name }}" value="{{ $tag->name }}">
+        @endforeach
         <input class="btn btn-primary" type="submit" value="Опубликовать">
 
     </form>

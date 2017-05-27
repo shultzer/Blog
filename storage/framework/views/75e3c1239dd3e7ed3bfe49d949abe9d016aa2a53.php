@@ -22,6 +22,10 @@
         <label for="body" >Текст статьи</label>
         <textarea  rows="10" class="form-control"  class="form-group" id="body" name="body"></textarea>
 <br>
+
+        <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <input type="checkbox" class="checkbox" name="<?php echo e($tag->name); ?>" value="<?php echo e($tag->name); ?>">
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <input class="btn btn-primary" type="submit" value="Опубликовать">
 
     </form>

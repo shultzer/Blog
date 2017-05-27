@@ -8,8 +8,10 @@
                 <p>Добавлено <?php echo e($article->updated_at); ?> </p>
 
                 <p class="blog-post"><?php echo e($article->body); ?></p>
+            <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
                 <?php if(\Illuminate\Support\Facades\Auth::user()->name == $article->user->name): ?>
                 <a href="/article/<?php echo e($article->slug); ?>/edit">Редактировать</a>
+                    <?php endif; ?>
                     <?php endif; ?>
             </div><!-- /.blog-post -->
 
