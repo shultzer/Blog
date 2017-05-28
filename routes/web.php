@@ -17,16 +17,19 @@
     Route::get ('/', 'IndexController@index')->name('/');
     Route::get ('/add', 'UserController@form');
     Route::get ('/article/{slug}', 'IndexController@show_article');
-    Route::post ('/add', 'UserController@add_article');
+    Route::get ('/tag/{slug}', 'IndexController@show_tags_articles');
+
+
+    Route::post ('/add', 'UserController@add_article')->name('add');
     Route::get('/{user}/detail ', 'IndexController@show_user');
+
+
 
     Route::put('/article/{slug}/update', 'UserController@update_article')->name('do_update');
     Route:: get('/article/{slug}/edit', 'UserController@edit_article_form')->name('edit  ');
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 Auth::routes();

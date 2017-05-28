@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,9 +11,17 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-  public function form (Tag $tag){
+    public function __construct() {
 
-    return view('user.add_article',['tag' => $tag] );
+      $this->middleware( 'auth');
+      $this->middleware( 'can:make-action-this-post', ['only' => ['update_article', 'edit_article_form']]);
+
+    }
+
+
+  public function form (Tag $tag, Article $article){
+
+    return view('user.add_article',['tag' => $tag], ['article'] );
 
   }
 
@@ -31,8 +40,9 @@ class UserController extends Controller
     ]);
 
     $user = Auth::user();
-    $p = $user->article()->create($request->except('_token'));
-    $p->save();
+    $article = $user->article()->create($request->except('_token'));
+    $article->tags()->attach($request->get('tag_list'));
+
 
 
 
@@ -54,13 +64,18 @@ class UserController extends Controller
 
   public function update_article (Article $articles, Request $request, $slug) {
 
+    $article = $articles->where(['slug' => $slug])->first();
+
+
     $this->validate($request, [
-      'title' => 'required|unique:articles|max:140,'.$articles->id,
+      'title' => 'required|unique:articles,title,'.$article->id,
       'slug' => 'reqiured|unique:articles|max:255',
       'short_description' => 'required|max:255',
       'body' => 'required|max:2000'
     ]);
-    $articles->where(['slug' => $slug])->update($request->except(['_token', '_method']));
+
+    $article->where(['slug' => $slug])->update($request->except(['_token', '_method', 'tag_list']));
+    $article->tags()->sync($request->get('tag_list'));
 
     return redirect()->route('/');
   }

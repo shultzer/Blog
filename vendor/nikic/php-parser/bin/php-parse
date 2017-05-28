@@ -119,7 +119,7 @@ Operations is a list of the following options (--dump by default):
         --serialize-xml     Serialize nodes using Serializer\XML
         --var-dump          var_dump() nodes (for exact structure)
     -N, --resolve-names     Resolve names using NodeVisitor\NameResolver
-    -c, --with-column-info  Show column-numbers for errors (if available)
+    -c, --with-column-info  Show column-numbers for error (if available)
     -P, --with-positions    Show positions in node dumps
     -r, --with-recovery     Use parsing with error recovery
     -h, --help              Display this page

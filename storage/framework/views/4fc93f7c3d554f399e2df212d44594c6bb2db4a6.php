@@ -8,7 +8,7 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
-<?php endif; ?>
+    <?php endif; ?>
 
     <?php echo e(Form::model($article, ["method" => "put", "route" => ['do_update', 'article' => $article->slug]])); ?>
 

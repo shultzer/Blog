@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -42,7 +43,23 @@ use Illuminate\Http\Request;
   public function show_article ($slug){
 
       $article = Article::where('slug', $slug)->first();
+
       return view('show_article', ['article' => $article]);
 
+  }
+
+
+  public function show_tags_articles( $slug){
+
+
+    $tags = Tag::where('slug', $slug)->get();
+
+
+
+
+
+
+
+    return view('show_tags_articles', ['tags' => $tags]);
   }
 }

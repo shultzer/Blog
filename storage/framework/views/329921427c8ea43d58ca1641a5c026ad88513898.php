@@ -8,6 +8,13 @@
                 <p>Добавлено <?php echo e($article->updated_at); ?> </p>
 
                 <p class="blog-post"><?php echo e($article->body); ?></p>
+                <p>
+                    <?php if(!empty($article->tags)): ?>
+                    <?php $__currentLoopData = $article->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a href="/tag/<?php echo e($tag->slug); ?>"><span class="label label-info"><?php echo e($tag->name); ?></span></a>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+                </p>
             <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
                 <?php if(\Illuminate\Support\Facades\Auth::user()->name == $article->user->name): ?>
                 <a href="/article/<?php echo e($article->slug); ?>/edit">Редактировать</a>

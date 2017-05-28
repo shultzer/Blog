@@ -16,5 +16,12 @@
     <?php echo e(Form::textarea('body', null, ['class' => 'form-control'])); ?>
 
 </div>
+<div class="form-group">
+    <?php echo Form::label('tag_list'); ?>
+
+    <?php echo e(Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), null, ['class' => 'form-control', 'multiple'])); ?>
+
+</div>
+
 
 <button class="btn btn-success btn-lg"><?php echo e(isset($btnText) ? $btnText : 'Создать'); ?></button>

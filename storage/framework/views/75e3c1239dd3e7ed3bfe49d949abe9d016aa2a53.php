@@ -9,26 +9,10 @@
                 </ul>
             </div>
         <?php endif; ?>
-    <form action="add" method="post" class="form-group">
-        <input type="hidden" value="<?php echo e(csrf_token()); ?>" name="<?php echo e('_token'); ?>">
+<?php echo e(Form::open(["route" => 'add'])); ?>
 
-        <label for="title">Заголовок</label>
-        <input class="form-control" id="title" name="title">
+<?php echo $__env->make('user._article_form', ['btnText' => 'Обновить'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo e(Form::close()); ?>
 
 
-        <label for="short_description">Короткое описание</label>
-        <textarea class="form-control"  class="form-group" id="short_description" name="short_description"></textarea><br>
-
-        <label for="body" >Текст статьи</label>
-        <textarea  rows="10" class="form-control"  class="form-group" id="body" name="body"></textarea>
-<br>
-
-        <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <input type="checkbox" class="checkbox" name="<?php echo e($tag->name); ?>" value="<?php echo e($tag->name); ?>">
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        <input class="btn btn-primary" type="submit" value="Опубликовать">
-
-    </form>
-
-    </div>
    <?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -10,5 +10,10 @@
     {!! Form::label('body') !!}
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 </div>
+<div class="form-group">
+    {!! Form::label('tag_list') !!}
+    {{ Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), null, ['class' => 'form-control', 'multiple']) }}
+</div>
+
 
 <button class="btn btn-success btn-lg">{{ $btnText or 'Создать' }}</button>

@@ -8,6 +8,13 @@
                 <p>Добавлено {{ $article->updated_at }} </p>
 
                 <p class="blog-post">{{ $article->body }}</p>
+                <p>
+                    @if(!empty($article->tags))
+                    @foreach($article->tags as $tag)
+                        <a href="/tag/{{ $tag->slug }}"><span class="label label-info">{{ $tag->name }}</span></a>
+                    @endforeach
+                @endif
+                </p>
             @if(\Illuminate\Support\Facades\Auth::check())
                 @if(\Illuminate\Support\Facades\Auth::user()->name == $article->user->name)
                 <a href="/article/{{ $article->slug }}/edit">Редактировать</a>
