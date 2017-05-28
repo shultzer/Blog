@@ -14,7 +14,7 @@ class UserController extends Controller
     public function __construct() {
 
       $this->middleware( 'auth');
-      $this->middleware('can:make-action-this-post,article', ['only' => ['update', 'edit']]);
+      $this->middleware('can:make-action-this-post,article', ['only' => ['update_article', 'edit_article_form']]);
     }
 
 

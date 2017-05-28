@@ -4,8 +4,6 @@
     <list default="true" id="938d7cbb-ab01-4b1d-aec8-cfd4bc36a816" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/16c167f6128f8ec13b38383a55dc3d13931bd6a8.php" afterPath="$PROJECT_DIR$/storage/framework/views/16c167f6128f8ec13b38383a55dc3d13931bd6a8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/9edcaafc5feb75c492a65681ac23d8523e6d310e.php" afterPath="$PROJECT_DIR$/storage/framework/views/9edcaafc5feb75c492a65681ac23d8523e6d310e.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="93" lean-forward="false" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+              <caret line="16" column="109" lean-forward="false" selection-start-line="16" selection-start-column="109" selection-end-line="16" selection-end-column="109" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
@@ -668,7 +666,7 @@
       <workItem from="1495689052762" duration="913000" />
       <workItem from="1495717969153" duration="3185000" />
       <workItem from="1495887970478" duration="4667000" />
-      <workItem from="1495915777009" duration="17800000" />
+      <workItem from="1495915777009" duration="17942000" />
     </task>
     <task id="LOCAL-00001" summary="again blog start">
       <created>1495046293435</created>
@@ -740,11 +738,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495990689876</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="+politics.">
+      <created>1495991146780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1495991146780</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98391000" />
+    <option name="totallyTimeSpent" value="98533000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,7 +805,8 @@
     <MESSAGE value="blog with users" />
     <MESSAGE value="Add tags with seed and migrations" />
     <MESSAGE value="+politics" />
-    <option name="LAST_COMMIT_MESSAGE" value="+politics" />
+    <MESSAGE value="+politics." />
+    <option name="LAST_COMMIT_MESSAGE" value="+politics." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1187,7 +1193,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="93" lean-forward="false" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+          <caret line="16" column="109" lean-forward="false" selection-start-line="16" selection-start-column="109" selection-end-line="16" selection-end-column="109" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
