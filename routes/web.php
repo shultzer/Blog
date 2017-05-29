@@ -16,7 +16,7 @@
 
     Route::get ('/', 'IndexController@index')->name('/');
     Route::get ('/add', 'UserController@form');
-    Route::get ('/article/{slug}', 'IndexController@show_article');
+    Route::get ('/article/{article}', 'IndexController@show_article');
     Route::get ('/tag/{slug}', 'IndexController@show_tags_articles');
 
 
@@ -25,8 +25,8 @@
 
 
 
-    Route::put('/article/{slug}/update', 'UserController@update_article')->name('do_update');
-    Route:: get('/article/{slug}/edit', 'UserController@edit_article_form')->name('edit  ');
+    Route::put('/article/{article}/update', 'UserController@update_article')->name('do_update');
+    Route:: get('/article/{article}/edit', 'UserController@edit_article_form')->name('edit');
 
 
 

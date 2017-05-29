@@ -14,6 +14,10 @@
     {!! Form::label('tag_list') !!}
     {{ Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), null, ['class' => 'form-control', 'multiple']) }}
 </div>
+<div class="form-group">
+    {{ Form::file('photo[]', ['multiple']) }}
+
+</div>
 
 
 <button class="btn btn-success btn-lg">{{ $btnText or 'Создать' }}</button>

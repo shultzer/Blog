@@ -8,6 +8,11 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Image;
+
+
 class UserController extends Controller
 {
 
@@ -31,6 +36,7 @@ class UserController extends Controller
 
   public function add_article (Request $request){
 
+
     $this->validate($request, [
       'title' => 'required|unique:articles|max:140',
       'slug' => 'reqiured|unique:articles|max:255',
@@ -38,10 +44,34 @@ class UserController extends Controller
       'body' => 'required|max:2000'
     ]);
 
+    if(!$request->hasFile('photo')){
+      //return redirect()->back();
+    }
+
+
+
+    foreach ($request->file('photo') as $photo) {
+
+
+
+        $fileName = time() . '_' . $photo->getClientOriginalName();
+        $r = $photo->storeAs('article_images', $fileName, ['disk' => 'article']);
+        $pathToFile = Storage::disk('article')->getDriver()->getAdapter()->getPathPrefix();
+        $whereToSave = $pathToFile . 'article_images/' .  'th-' . $fileName;
+
+      Image::make($pathToFile.$r)->fit(100)->save($whereToSave, 100);
+    }
+
     $user = Auth::user();
+
     $article = $user->article()->create($request->except('_token'));
     $article->tags()->attach($request->get('tag_list'));
-
+    if (Input::hasFile('photo'))
+    {
+      dump($article->photos());
+      $article->photos()->create(['photo' => $r],
+                                  ['thumnails' => $r]);
+    }
 
 
 
@@ -52,7 +82,7 @@ class UserController extends Controller
 
   public function edit_article_form (Article $articles, $slug){
 
-    $article = $articles->where(['slug' => $slug])->first();
+   $article = $articles->where(['slug' => $slug])->first();
 
 
 
@@ -75,6 +105,7 @@ class UserController extends Controller
 
     $article->where(['slug' => $slug])->update($request->except(['_token', '_method', 'tag_list']));
     $article->tags()->sync($request->get('tag_list'));
+
 
     return redirect()->route('/');
   }

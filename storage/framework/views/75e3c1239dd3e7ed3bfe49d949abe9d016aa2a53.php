@@ -9,9 +9,9 @@
                 </ul>
             </div>
         <?php endif; ?>
-<?php echo e(Form::open(["route" => 'add'])); ?>
+<?php echo e(Form::open(["route" => 'add', 'files' => true])); ?>
 
-<?php echo $__env->make('user._article_form', ['btnText' => 'Обновить'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('user._article_form', ['btnText' => 'Создать'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo e(Form::close()); ?>
 
 

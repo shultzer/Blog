@@ -22,6 +22,11 @@
     <?php echo e(Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), null, ['class' => 'form-control', 'multiple'])); ?>
 
 </div>
+<div class="form-group">
+    <?php echo e(Form::file('photo[]', ['multiple'])); ?>
+
+
+</div>
 
 
 <button class="btn btn-success btn-lg"><?php echo e(isset($btnText) ? $btnText : 'Создать'); ?></button>

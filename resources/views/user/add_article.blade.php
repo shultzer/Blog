@@ -9,8 +9,8 @@
                 </ul>
             </div>
         @endif
-{{ Form::open(["route" => 'add']) }}
-@include('user._article_form', ['btnText' => 'Обновить'])
+{{ Form::open(["route" => 'add', 'files' => true]) }}
+@include('user._article_form', ['btnText' => 'Создать'])
 {{ Form::close() }}
 
    @include('footer')

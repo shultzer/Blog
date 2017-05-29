@@ -43,6 +43,13 @@ class Article extends Model
     return $this->belongsToMany('App\Tag');
   }
 
+
+  public function photos() {
+
+    return $this->hasMany('App\Photo');
+  }
+
+
   public function getTagListAttribute()
   {
     return $this->tags()->pluck('id')->toArray();
