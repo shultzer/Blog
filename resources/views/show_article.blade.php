@@ -4,6 +4,9 @@
             <div class="blog-post">
 
                 <h2 class="blog-post-title">{{$article->title}}</h2>
+                @foreach($article->photos as $photo)
+                    <img src="/images/{{ $photo->photo }}">
+                @endforeach
                 <p>Автор <a href="/{{$article->user->name}}/detail">{{ $article->user->name }}</a></p>
                 <p>Добавлено {{ $article->updated_at }} </p>
 

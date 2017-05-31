@@ -21,7 +21,7 @@ use Illuminate\Http\Request;
      $users = User::all();
      $photos = Photo::all();
      $articles = Article::latest('created_at')->paginate(3);
-    
+
 
      return view('index', ['articles' => $articles],
                                   ['users' => $users],
@@ -54,8 +54,8 @@ use Illuminate\Http\Request;
 
 
     $tags = Tag::where('slug', $tag)->get();
+    $photos = Photo::all();
 
-
-    return view('show_tags_articles', ['tags' => $tags]);
+    return view('show_tags_articles', ['tags' => $tags], ['photos' => $photos]);
   }
 }
