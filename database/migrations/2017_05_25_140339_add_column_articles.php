@@ -30,7 +30,7 @@ class AddColumnArticles extends Migration
   {
     Schema::table('articles', function (Blueprint $table) {
 
-      $table->dropForeign('articles_user_id_foreign');
+      //$table->dropForeign('articles_user_id_foreign');
       $table->dropColumn('user_id');
     });
   }

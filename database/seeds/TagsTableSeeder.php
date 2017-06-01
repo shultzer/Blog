@@ -9,10 +9,12 @@ class TagsTableSeeder extends Seeder
 {
   private static $tags = [
     'Спорт',
-    'Юмор',
+    'Культура',
     'Музыка',
     'Политика',
-    'Президент',
+    'Авто',
+    'Экономика',
+    'Технологии'
   ];
   /**
    * Run the database seeds.

@@ -1,5 +1,4 @@
 @include('head')
-    <div class="col-sm-8 blog-main">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
