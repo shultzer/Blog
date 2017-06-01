@@ -56,7 +56,7 @@ class UserController extends Controller
           $pathToFile = Storage::disk('article')->getDriver()->getAdapter()->getPathPrefix();
           $whereToSave = $pathToFile . 'article_images/' .  'th-' . $fileName;
 
-          Image::make($pathToFile.$r)->fit(400)->save($whereToSave, 100);
+          Image::make($pathToFile.$r)->fit(200)->save($whereToSave, 100);
 
 
       }
