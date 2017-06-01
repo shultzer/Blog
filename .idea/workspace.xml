@@ -2,35 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938d7cbb-ab01-4b1d-aec8-cfd4bc36a816" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/1496314645_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/1496314714_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/1496316724_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/1496316737_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/1496316753_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/1496316771_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/th-1496314714_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/th-1496316724_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/th-1496316737_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/th-1496316753_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article_images/th-1496316771_lukashenko-01062017.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/sessions/1lYekhWxNU7WlnBZB9YUp0x612johXbbu78WU1Kr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/sessions/jqJkmClY6EAsXYkIhOUbeNlj7hKkB4TzpK3yFosc" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b0PRMvj6dBlSWHx1A8bPmPgQ23HgHvxP58GW4o1R" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ftu4AT8hZS37t22oJlxaImkKY8MglKiUQaRhqIXX" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_05_25_135528_create_blog_tables.php" afterPath="$PROJECT_DIR$/database/migrations/2017_05_25_135528_create_blog_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_05_25_140339_add_column_articles.php" afterPath="$PROJECT_DIR$/database/migrations/2017_05_25_140339_add_column_articles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/TagsTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/TagsTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/body.blade.php" afterPath="$PROJECT_DIR$/resources/views/body.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/add_article.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/add_article.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/564d098cc91644add1712b00b6c1a842976d80a9.php" afterPath="$PROJECT_DIR$/storage/framework/views/564d098cc91644add1712b00b6c1a842976d80a9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/75e3c1239dd3e7ed3bfe49d949abe9d016aa2a53.php" afterPath="$PROJECT_DIR$/storage/framework/views/75e3c1239dd3e7ed3bfe49d949abe9d016aa2a53.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/92c1605c80a2e7cb42a93baad0cfa3cf87c11ad3.php" afterPath="$PROJECT_DIR$/storage/framework/views/92c1605c80a2e7cb42a93baad0cfa3cf87c11ad3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/edit_article.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/edit_article.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/4fc93f7c3d554f399e2df212d44594c6bb2db4a6.php" afterPath="$PROJECT_DIR$/storage/framework/views/4fc93f7c3d554f399e2df212d44594c6bb2db4a6.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthServiceProvider.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthServiceProvider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -106,6 +80,26 @@
               <folding>
                 <element signature="e#33#69#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_article_form.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/_article_form.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_article.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/edit_article.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -204,7 +198,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_05_27_164359_create_articlestags_table.php" />
         <option value="&lt;550377b7-066a-4554-a2f4-beeddb55a18c&gt;/.env" />
         <option value="$PROJECT_DIR$/app/Tag.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/edit_article.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/show_tags_article.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/show_tags_article.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/503.blade.php" />
@@ -231,6 +224,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/edit_article.blade.php" />
       </list>
     </option>
   </component>
@@ -369,7 +363,47 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -546,7 +580,7 @@
       <workItem from="1495717969153" duration="3185000" />
       <workItem from="1495887970478" duration="4667000" />
       <workItem from="1495915777009" duration="38918000" />
-      <workItem from="1496255000475" duration="7001000" />
+      <workItem from="1496255000475" duration="7082000" />
     </task>
     <task id="LOCAL-00001" summary="again blog start">
       <created>1495046293435</created>
@@ -653,11 +687,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496300473802</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="++pictures (-politics)">
+      <created>1496318760750</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1496318760750</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126510000" />
+    <option name="totallyTimeSpent" value="126591000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,13 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/edit_article.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/show_tags_articles.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -870,13 +904,6 @@
         <state relative-caret-position="315">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/_article_form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1099,6 +1126,22 @@
           <folding>
             <element signature="e#33#69#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/_article_form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/edit_article.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
