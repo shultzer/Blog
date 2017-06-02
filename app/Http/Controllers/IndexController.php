@@ -28,10 +28,13 @@ use Illuminate\Http\Request;
 
 
 
-      public function show_user ($user)
+      public function show_user ($user, Article $articles)
       {
           $users = User::all();
-            return view('profiles.index', ['user'=> $user], ['users' => $users]);
+          $u = User::where('name', $user)->get();
+
+          return view('profiles.index', ['user'=> $user], ['users' => $users],
+                                              ['articles' => $articles], ['u'=> $u]);
       }
 
 

@@ -37,6 +37,10 @@ class UserController extends Controller
           'body' => 'required|max:2000'
         ]);
 
+        $user = Auth::user();
+        $article = $user->article()->create($request->except('_token'));
+        $article->tags()->attach($request->get('tag_list'));
+
         if(!$request->hasFile('photo')){
           return redirect()->back();
         }
@@ -49,14 +53,9 @@ class UserController extends Controller
             $whereToSave = $pathToFile . 'article_images/' .  'th-' . $fileName;
             $thumbnails = 'article_images/' .  'th-' . $fileName;
             Image::make($pathToFile.$r)->fit(400, 200)->save($whereToSave, 100);
+            $article->photos()->create(['photo' => $r, 'thumbnails' => $thumbnails]);
+
         }
-
-        $user = Auth::user();
-
-        $article = $user->article()->create($request->except('_token'));
-        $article->tags()->attach($request->get('tag_list'));
-        $article->photos()->create(['photo' => $r, 'thumbnails' => $thumbnails]);
-
 
         return redirect()->route('/');
     }
@@ -69,10 +68,7 @@ class UserController extends Controller
     }
 
 
-    public function update_article (Article $article, Request $request, $slug) {
-
-        //$article = $articles->where(['slug' => $slug])->first();
-
+    public function update_article (Article $article, Request $request) {
 
         $this->validate($request, [
           'title' => 'required|unique:articles,title,'.$article->id,
@@ -81,11 +77,26 @@ class UserController extends Controller
           'body' => 'required|max:2000'
         ]);
 
-        $article->where(['slug' => $slug])->update($request->except(['_token', '_method', 'tag_list']));
+        $article->update($request->except(['_token', '_method', 'tag_list']));
         $article->tags()->sync($request->get('tag_list'));
 
+        if($request->hasFile('photo')){
 
-      return redirect()->route('/');
+            foreach ($request->file('photo') as $photo) {
+
+              $fileName = time() . '_' . $photo->getClientOriginalName();
+              $r = $photo->storeAs('article_images', $fileName, ['disk' => 'article']);
+              $pathToFile = Storage::disk('article')->getDriver()->getAdapter()->getPathPrefix();
+              $whereToSave = $pathToFile . 'article_images/' .  'th-' . $fileName;
+              $thumbnails[] = 'article_images/' .  'th-' . $fileName;
+              Image::make($pathToFile.$r)->fit(400, 200)->save($whereToSave, 100);
+              $article->photos()->update(['photo'      => $r, 'thumbnails' => $thumbnails]);
+
+            }
+
+        }
+
+        return redirect()->route('/');
     }
 
 }
