@@ -1,25 +1,25 @@
 <div class="form-group">
     <?php echo e(Form::label('title', 'Заголовок')); ?>
 
-    <?php echo e(Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Заголовок'])); ?>
+    <?php echo e(Form::text('title', NULL, ['class' => 'form-control', 'placeholder' => 'Заголовок'])); ?>
 
 </div>
 <div class="form-group">
-    <?php echo Form::label('short_description'); ?>
+    <?php echo Form::label('short_description', 'Краткое описание'); ?>
 
-    <?php echo e(Form::textarea('short_description', null, ['class' => 'form-control'])); ?>
-
-</div>
-<div class="form-group">
-    <?php echo Form::label('body'); ?>
-
-    <?php echo e(Form::textarea('body', null, ['class' => 'form-control'])); ?>
+    <?php echo e(Form::textarea('short_description', NULL, ['class' => 'form-control'])); ?>
 
 </div>
 <div class="form-group">
-    <?php echo Form::label('tag_list'); ?>
+    <?php echo Form::label('body', 'Текст статьи'); ?>
 
-    <?php echo e(Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), null, ['class' => 'form-control', 'multiple'])); ?>
+    <?php echo e(Form::textarea('body', NULL, ['class' => 'form-control'])); ?>
+
+</div>
+<div class="form-group">
+    <?php echo Form::label('tag_list','Тэги'); ?>
+
+    <?php echo e(Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), NULL, ['class' => 'form-control', 'multiple'])); ?>
 
 </div>
 <div class="form-group">

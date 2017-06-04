@@ -1,39 +1,42 @@
 <?php
 
-namespace App;
+    namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+    use Illuminate\Notifications\Notifiable;
+    use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
-    use Notifiable;
+    class User extends Authenticatable {
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+        use Notifiable;
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = [
+          'name',
+          'email',
+          'password',
+        ];
 
-  public function article(){
+        /**
+         * The attributes that should be hidden for arrays.
+         *
+         * @var array
+         */
+        protected $hidden = [
+          'password',
+          'remember_token',
+        ];
 
-    return $this->hasMany('App\Article');
+        public function article () {
 
-  }
-  public function attachNews(Request $request)
-  {
-    return $this->article()->create($request->except('_token'));
-  }
-}
+            return $this->hasMany( 'App\Article' );
+
+        }
+
+        public function attachNews ( Request $request ) {
+            return $this->article()->create( $request->except( '_token' ) );
+        }
+    }

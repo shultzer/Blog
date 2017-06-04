@@ -1,18 +1,20 @@
 <?php
 
-namespace App;
+    namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
-class Photo extends Model
-{
+    class Photo extends Model {
 
-  protected $fillable = [
-    'photo', 'thumbnails', 'article_id'
-  ];
-  public function articles() {
+        protected $fillable = [
+          'photo',
+          'thumbnails',
+          'article_id',
+        ];
 
-    return $this->belongsTo('App\Article');
+        public function articles () {
 
-  }
-}
+            return $this->belongsTo( 'App\Article' );
+
+        }
+    }

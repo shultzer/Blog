@@ -1,18 +1,18 @@
 <div class="form-group">
     {{ Form::label('title', 'Заголовок') }}
-    {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Заголовок']) }}
+    {{ Form::text('title', NULL, ['class' => 'form-control', 'placeholder' => 'Заголовок']) }}
 </div>
 <div class="form-group">
-    {!! Form::label('short_description') !!}
-    {{ Form::textarea('short_description', null, ['class' => 'form-control']) }}
+    {!! Form::label('short_description', 'Краткое описание') !!}
+    {{ Form::textarea('short_description', NULL, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-    {!! Form::label('body') !!}
-    {{ Form::textarea('body', null, ['class' => 'form-control']) }}
+    {!! Form::label('body', 'Текст статьи') !!}
+    {{ Form::textarea('body', NULL, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-    {!! Form::label('tag_list') !!}
-    {{ Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), null, ['class' => 'form-control', 'multiple']) }}
+    {!! Form::label('tag_list','Тэги') !!}
+    {{ Form::select('tag_list[]', \App\Tag::pluck('name', 'id'), NULL, ['class' => 'form-control', 'multiple']) }}
 </div>
 <div class="form-group">
     {{ Form::file('photo[]', ['multiple']) }}

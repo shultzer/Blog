@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,32 +29,31 @@
             <a class="blog-nav-item @if($url == 'http://blog')active @endif" href="/">Главная</a>
 
             @if(\Illuminate\Support\Facades\Auth::check())
-            <a class="blog-nav-item @if($url == 'http://blog/add')active @endif" href="/add">Опубликовать статью</a>
+                <a class="blog-nav-item @if($url == 'http://blog/add')active @endif" href="/add">Опубликовать статью</a>
             @endif
 
 
-
             <div style="float: right">@if (Auth::guest())
-                <a class="blog-nav-item" href="{{ route('login') }}">Login</a>
-                <a class="blog-nav-item" href="{{ route('register') }}">Register</a>
-            @else
+                    <a class="blog-nav-item" href="{{ route('login') }}">Login</a>
+                    <a class="blog-nav-item" href="{{ route('register') }}">Register</a>
+                @else
             </div>
 
             <div style="float: right">
-                    <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
+                <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
 
 
-                            <a href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
+                    Logout
+                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </div>
 
 
@@ -67,6 +65,9 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">The  Blog</h1>
-        <p class="lead blog-description">The official  blog with Bootstrap on Laravel.</p>
+        <h1 class="blog-title"><a href="/">The Blog</a></h1>
+        <p class="lead blog-description">The official blog with Bootstrap on Laravel.</p>
     </div>
+    @if(session('status') !== NULL)
+        <div class="alert alert-success">{{ session('status') }}</div>
+@endif

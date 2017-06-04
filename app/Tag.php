@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+    namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
-{
-    public function articles (){
+    class Tag extends Model {
 
-      return $this->belongsToMany('App\Article');
+        public function articles () {
+
+            return $this->belongsToMany( 'App\Article' );
+        }
     }
-}

@@ -4,11 +4,12 @@
             <div class="blog-post">
 
                 <h2 class="blog-post-title"><?php echo e($article->title); ?></h2>
-                <?php $__currentLoopData = $article->photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img src="/images/<?php echo e($photo->photo); ?>">
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <p>Автор <a href="/<?php echo e($article->user->name); ?>/detail"><?php echo e($article->user->name); ?></a></p>
                 <p>Добавлено <?php echo e($article->updated_at); ?> </p>
+
+            <?php $__currentLoopData = $article->photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <img src="/images/<?php echo e($photo->photo); ?>">
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 <p class="blog-post"><?php echo e($article->body); ?></p>
                 <p>
@@ -21,6 +22,9 @@
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
                     <?php if(\Illuminate\Support\Facades\Auth::user()->name == $article->user->name): ?>
                         <a href="/article/<?php echo e($article->slug); ?>/edit">Редактировать</a>
+
+                        <a href="/article/<?php echo e($article->slug); ?>/delete">Удалить</a>
+
                     <?php endif; ?>
                 <?php endif; ?>
             </div><!-- /.blog-post -->

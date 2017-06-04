@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,33 +29,32 @@
             <a class="blog-nav-item <?php if($url == 'http://blog'): ?>active <?php endif; ?>" href="/">Главная</a>
 
             <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-            <a class="blog-nav-item <?php if($url == 'http://blog/add'): ?>active <?php endif; ?>" href="/add">Опубликовать статью</a>
+                <a class="blog-nav-item <?php if($url == 'http://blog/add'): ?>active <?php endif; ?>" href="/add">Опубликовать статью</a>
             <?php endif; ?>
 
 
-
             <div style="float: right"><?php if(Auth::guest()): ?>
-                <a class="blog-nav-item" href="<?php echo e(route('login')); ?>">Login</a>
-                <a class="blog-nav-item" href="<?php echo e(route('register')); ?>">Register</a>
-            <?php else: ?>
+                    <a class="blog-nav-item" href="<?php echo e(route('login')); ?>">Login</a>
+                    <a class="blog-nav-item" href="<?php echo e(route('register')); ?>">Register</a>
+                <?php else: ?>
             </div>
 
             <div style="float: right">
-                    <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                    </a>
+                <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
+                </a>
 
 
-                            <a href="<?php echo e(route('logout')); ?>"
-                               onclick="event.preventDefault();
+                <a href="<?php echo e(route('logout')); ?>"
+                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
+                    Logout
+                </a>
 
-                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                <?php echo e(csrf_field()); ?>
+                <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                    <?php echo e(csrf_field()); ?>
 
-                            </form>
+                </form>
             </div>
 
 
@@ -68,6 +66,9 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">The  Blog</h1>
-        <p class="lead blog-description">The official  blog with Bootstrap on Laravel.</p>
+        <h1 class="blog-title"><a href="/">The Blog</a></h1>
+        <p class="lead blog-description">The official blog with Bootstrap on Laravel.</p>
     </div>
+    <?php if(session('status') !== NULL): ?>
+        <div class="alert alert-success"><?php echo e(session('status')); ?></div>
+<?php endif; ?>
