@@ -117,7 +117,8 @@
                          ->fit( 400, 200 )
                          ->save( $whereToSave, 100 );
 
-                    $article->photo->update( [
+                    $article_photos = $article->photos()->get();
+                    $article_photos->update( [
                       'photo'      => $r,
                       'thumbnails' => $thumbnails,
                     ] );
@@ -131,10 +132,12 @@
             return redirect()->route( '/' );
         }
 
-        public function delete_article ( Article $article, Request $request ) {
+        public function delete_article ( Article $article ) {
 
             $article->delete();
-            $article->photos()->delete();
+            $article_photos = $article->photos()->get();
+
+            $article_photos->delete();
 
             return redirect()->route( '/' );
 

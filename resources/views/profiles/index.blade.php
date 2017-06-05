@@ -10,14 +10,14 @@
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
                 fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
         </div>
-        {{--<div class="sidebar-module">
+        <div class="sidebar-module">
             <h4>Users</h4>
             <ol class="list-unstyled">
                 @foreach($users as $user)
                 <li><a href="/{{$user->name}}/detail">{{$user->name}}</a></li>
                     @endforeach
             </ol>
-        </div>--}}
+        </div>
         <div class="sidebar-module">
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">

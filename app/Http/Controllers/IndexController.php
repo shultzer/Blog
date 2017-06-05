@@ -27,12 +27,9 @@
 
         public function show_user ( $user, Article $articles ) {
 
-
-            $u     = User::where( 'name', $user )->get();
+            $u     = User::where( 'name', $user )->first();
             $users = User::all();
-
             return view( 'profiles.index', [ 'u' => $u ],
-              [ 'user' => $user ],
               [ 'users' => $users ],
               [ 'articles' => $articles ] );
         }
