@@ -27,7 +27,7 @@
     Route:: get( '/article/{article}/edit', 'UserController@edit_article_form' )
          ->name( 'edit' );
 
-    Route::get('/article/{article}/delete','UserController@delete_article')->name('delete');
+    Route::get('/article/{article}/delete','UserController@delete_article');
 
 
     Auth::routes();

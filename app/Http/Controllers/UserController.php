@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Article;
+    use App\Photo;
     use App\Tag;
     use App\User;
     use DB;
@@ -22,7 +23,7 @@
               'only' => [
                 'update_article',
                 'edit_article_form',
-                  'delete_article',
+                'delete_article',
               ],
             ] );
         }
@@ -117,11 +118,11 @@
                          ->fit( 400, 200 )
                          ->save( $whereToSave, 100 );
 
-                    $article_photos = $article->photos()->get();
-                    $article_photos->update( [
+                    $article->photos()->update( [
                       'photo'      => $r,
                       'thumbnails' => $thumbnails,
-                    ] );
+                    ] )->except( '_token' );
+
 
                 }
 
@@ -136,11 +137,12 @@
 
             $article->delete();
             $article_photos = $article->photos()->get();
-
-            $article_photos->delete();
+            foreach ( $article_photos as $aph ) {
+                $aph->delete();
+            }
 
             return redirect()->route( '/' );
 
         }
 
-        }
+    }
