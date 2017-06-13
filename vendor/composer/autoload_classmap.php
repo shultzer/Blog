@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AddColumPhotoid' => $baseDir . '/database/migrations/2017_05_28_180715_add_colum_photoid.php',
     'AddColumnArticles' => $baseDir . '/database/migrations/2017_05_25_140339_add_column_articles.php',
     'App\\Article' => $baseDir . '/app/Article.php',
+    'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -44,6 +44,7 @@ return array(
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateArticlestagsTable' => $baseDir . '/database/migrations/2017_05_27_164359_create_articlestags_table.php',
     'CreateBlogTables' => $baseDir . '/database/migrations/2017_05_25_135528_create_blog_tables.php',
+    'CreateCommentsTable' => $baseDir . '/database/migrations/2017_06_10_160257_create_comments_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePhotosTable' => $baseDir . '/database/migrations/2017_05_28_174746_create_photos_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',

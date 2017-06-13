@@ -297,9 +297,9 @@ class ComposerStaticInit180827855b3b8183f0b9fbaeb5444ce0
     );
 
     public static $classMap = array (
-        'AddColumPhotoid' => __DIR__ . '/../..' . '/database/migrations/2017_05_28_180715_add_colum_photoid.php',
         'AddColumnArticles' => __DIR__ . '/../..' . '/database/migrations/2017_05_25_140339_add_column_articles.php',
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
+        'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -335,6 +335,7 @@ class ComposerStaticInit180827855b3b8183f0b9fbaeb5444ce0
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreateArticlestagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_27_164359_create_articlestags_table.php',
         'CreateBlogTables' => __DIR__ . '/../..' . '/database/migrations/2017_05_25_135528_create_blog_tables.php',
+        'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_10_160257_create_comments_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePhotosTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_28_174746_create_photos_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',

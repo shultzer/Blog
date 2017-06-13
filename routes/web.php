@@ -28,6 +28,7 @@
          ->name( 'edit' );
 
     Route::get('/article/{article}/delete','UserController@delete_article');
+    Route::post('/article/{article}/addcomment','UserController@addcomment')->name('addcomment');
 
 
     Auth::routes();

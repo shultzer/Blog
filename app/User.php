@@ -35,6 +35,11 @@
             return $this->hasMany( 'App\Article' );
 
         }
+      public function comments () {
+
+        return $this->hasMany( 'App\Comment' );
+
+      }
 
         public function attachNews ( Request $request ) {
             return $this->article()->create( $request->except( '_token' ) );

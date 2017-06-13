@@ -1,14 +1,17 @@
 <div class="form-group">
-    {{ Form::label('title', 'Заголовок') }}
+
     {{ Form::text('title', NULL, ['class' => 'form-control', 'placeholder' => 'Заголовок']) }}
 </div>
 <div class="form-group">
-    {!! Form::label('short_description', 'Краткое описание') !!}
-    {{ Form::textarea('short_description', NULL, ['class' => 'form-control']) }}
+
+    {{ Form::textarea('short_description', NULL, ['class' => 'form-control', 'placeholder' => 'Краткое описание']) }}
 </div>
 <div class="form-group">
     {!! Form::label('body', 'Текст статьи') !!}
     {{ Form::textarea('body', NULL, ['class' => 'form-control']) }}
+    <script>
+        CKEDITOR.replace( 'body' );
+    </script>
 </div>
 <div class="form-group">
     {!! Form::label('tag_list','Тэги') !!}
