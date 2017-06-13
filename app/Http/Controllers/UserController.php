@@ -116,7 +116,7 @@
           $whereToSave  = $pathToFile . 'article_images/' . 'th-' . $fileName;
           $thumbnails[] = 'article_images/' . 'th-' . $fileName;
           Image::make($pathToFile . $r)
-               ->fit(400, 200)
+               ->fit(617, 320)
                ->save($whereToSave, 100);
 
           $article->photos()->update([
@@ -156,7 +156,6 @@
 
       $article->comments()->create($request->except('token'));
       return redirect()->back();
-
 
 
     }
