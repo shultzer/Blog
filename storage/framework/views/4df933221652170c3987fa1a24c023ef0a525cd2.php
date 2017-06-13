@@ -4,7 +4,6 @@
 
 </div>
 <div class="form-group">
-
     <?php echo e(Form::textarea('short_description', NULL, ['class' => 'form-control', 'placeholder' => 'Краткое описание'])); ?>
 
 </div>
@@ -14,7 +13,7 @@
     <?php echo e(Form::textarea('body', NULL, ['class' => 'form-control'])); ?>
 
     <script>
-        CKEDITOR.replace( 'body' );
+        CKEDITOR.replace('body');
     </script>
 </div>
 <div class="form-group">
@@ -30,4 +29,4 @@
 </div>
 
 
-<button class="btn btn-success btn-lg"><?php echo e(isset($btnText) ? $btnText : 'Создать'); ?></button>
+<button class="btn btn-primary btn-lg"><?php echo e(isset($btnText) ? $btnText : 'Создать'); ?></button>

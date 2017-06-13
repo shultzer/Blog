@@ -56,7 +56,7 @@
 
             <h3>Добавить комментарий</h3>
             <div class="well">
-                <form role="form">
+
                     {{ Form::open(["route" => ['addcomment', 'article' => $article->slug]]) }}
                     <div class="form-group">
                         {{ Form::hidden('author', Auth::user()->name, ['class' => 'form-control']) }}
