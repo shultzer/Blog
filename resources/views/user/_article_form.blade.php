@@ -1,5 +1,4 @@
 <div class="form-group">
-
     {{ Form::text('title', NULL, ['class' => 'form-control', 'placeholder' => 'Заголовок']) }}
 </div>
 <div class="form-group">
@@ -18,7 +17,6 @@
 </div>
 <div class="form-group">
     {{ Form::file('photo[]', ['multiple']) }}
-
 </div>
 
 

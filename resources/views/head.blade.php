@@ -8,57 +8,47 @@
     <meta name="description" content="blog auto news comments">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>LaraBlog</title>
-
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
-
 </head>
 
 <body>
-
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
             @php($url = \Illuminate\Support\Facades\Request::url())
-
-            <a class="blog-nav-item @if($url == 'http://blog')active @endif" href="/">Главная</a>
-
-            @if(\Illuminate\Support\Facades\Auth::check())
-                <a class="blog-nav-item @if($url == 'http://blog/add')active @endif" href="/add">Опубликовать статью</a>
-            @endif
-
-
-            <div style="float: right">@if (Auth::guest())
-                    <a class="blog-nav-item" href="{{ route('login') }}">Login</a>
-                    <a class="blog-nav-item" href="{{ route('register') }}">Register</a>
-                @else
-            </div>
-
-            <div style="float: right">
-                <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-
-                <a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </div>
-
-
-            @endif
+                <a class="blog-nav-item @if($url == 'http://blog')active @endif" href="/">Главная</a>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <a class="blog-nav-item @if($url == 'http://blog/add')active @endif"
+                       href="/add">Опубликовать статью</a>
+                @endif
+            @if (Auth::guest())
+                <div style="float: right">
+                        <a class="blog-nav-item" href="{{ route('login') }}">Войти</a>
+                        <a class="blog-nav-item" href="{{ route('facebooklogin') }}">Войти с помощью facebook</a>
+                        <a class="blog-nav-item" href="{{ route('register') }}">Зарегистрироваться</a>
+                </div>
+            @else
+                <div style="float: right">
+                    <a href="#" class="blog-nav-item" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                        Выйти
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
+                @endif
         </nav>
     </div>
 </div>
@@ -66,7 +56,7 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title"><a href="/">The Blog</a></h1>
+        <h1 class="blog-title"><a style="text-decoration: none;" href="/">The Blog</a></h1>
     </div>
     @if(session('status') !== NULL)
         <div class="alert alert-success">{{ session('status') }}</div>

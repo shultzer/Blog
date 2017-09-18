@@ -34,7 +34,6 @@
 
     }
 
-
     public function add_article(Request $request) {
 
       $this->validate($request, [
@@ -51,14 +50,12 @@
       if (!$request->hasFile('photo')) {
         return redirect()->back();
       }
-
       $request->session()->flash('status', 'Запись внесена!!!');
-
 
       foreach ($request->file('photo') as $photo) {
 
         $fileName    = time() . '_' . $photo->getClientOriginalName();
-        $r           = $photo->storeAs('article_images', $fileName, ['disk' => 'article']);
+        $r           = $photo->storeAs('completters', $fileName, ['disk' => 'laradoc']);
         $pathToFile  = Storage::disk('article')
                               ->getDriver()
                               ->getAdapter()
@@ -66,7 +63,7 @@
         $whereToSave = $pathToFile . 'article_images/' . 'th-' . $fileName;
         $thumbnails  = 'article_images/' . 'th-' . $fileName;
         Image::make($pathToFile . $r)
-             ->fit(400, 200)
+             ->fit(616, 308)
              ->save($whereToSave, 100);
 
         $article->photos()->create([
@@ -79,13 +76,11 @@
       return redirect()->route('/');
     }
 
-
     public function edit_article_form(Article $articles) {
 
       return view('user.edit_article', ['article' => $articles]);
 
     }
-
 
     public function update_article(Article $article, Request $request) {
 
@@ -104,9 +99,7 @@
       $article->tags()->sync($request->get('tag_list'));
 
       if ($request->hasFile('photo')) {
-
         foreach ($request->file('photo') as $photo) {
-
           $fileName     = time() . '_' . $photo->getClientOriginalName();
           $r            = $photo->storeAs('article_images', $fileName, ['disk' => 'article']);
           $pathToFile   = Storage::disk('article')
@@ -118,46 +111,31 @@
           Image::make($pathToFile . $r)
                ->fit(617, 320)
                ->save($whereToSave, 100);
-
           $article->photos()->update([
             'photo'      => $r,
             'thumbnails' => $thumbnails,
           ])->except('_token');
-
-
         }
-
       }
       $request->session()->flash('status', 'Запись обновлена!!!');
-
-
       return redirect()->route('/');
     }
 
     public function delete_article(Article $article) {
-
       $article->delete();
       $article_photos = $article->photos()->get();
       foreach ($article_photos as $aph) {
         $aph->delete();
       }
-
       return redirect()->route('/');
-
     }
 
-
     public function addcomment(Request $request, Article $article) {
-
 
       $this->validate($request, [
         'body' => 'required|max:1000',
       ]);
-
       $article->comments()->create($request->except('token'));
       return redirect()->back();
-
-
     }
-
   }

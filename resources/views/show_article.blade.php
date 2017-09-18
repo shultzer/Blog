@@ -1,5 +1,5 @@
 @include('head')
-<div class="col-sm-8 blog-main">
+<div class="col-sm-12 blog-main">
 
     <div class="blog-post">
 
@@ -26,36 +26,36 @@
             @endif
         @endif
 
+        <div class="col-sm-8 blog-main">
+            <h3>Комментарии</h3>
 
-        <h3>Комментарии</h3>
-
-        @if($article->comments !== NULL)
-            @foreach($article->comments as $comment)
-                <h4 class="media-heading">{{ $comment->author }}:</h4>
-                <div class="well">
-                    <div class="media-body">
-                        <p>{{ $comment->body }}</p>
+            @if($article->comments !== NULL)
+                @foreach($article->comments as $comment)
+                    <h4 class="media-heading">{{ $comment->author }}:</h4>
+                    <div class="well">
+                        <div class="media-body">
+                            <p>{{ $comment->body }}</p>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
 
 
-        @endif
-        @if(\Illuminate\Support\Facades\Auth::check())
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
             @endif
+            @if(\Illuminate\Support\Facades\Auth::check())
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
 
 
-            <h3>Добавить комментарий</h3>
-            <div class="well">
+                <h3>Добавить комментарий</h3>
+                <div class="well">
 
                     {{ Form::open(["route" => ['addcomment', 'article' => $article->slug]]) }}
                     <div class="form-group">
@@ -66,10 +66,11 @@
                         </div>
                         <button class="btn btn-primary btn-lg">Написать комментарий</button>
                     </div>
-            </div>
-            {{ Form::close() }}
+                </div>
+                {{ Form::close() }}
 
-        @endif
+            @endif
+        </div>
     </div><!-- /.blog-post -->
 
 

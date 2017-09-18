@@ -6,9 +6,9 @@
             @foreach($article->photos as $photo)
             @php($thumbarr[] = $photo->thumbnails)
             @endforeach
-                <img src="images/{{ $thumbarr[0] }}">
+                <img src="images/{{ $thumbarr[0] }}" width="100%>
             @endif
-            <a href="/article/{{ $article->slug }}"> <h2 class="blog-post-title">{{$article->title}}</h2></a>
+            <a href="/article/{{ $article->slug }}"><h2 class="blog-post-title">{{$article->title}}</h2></a>
             <p class="blog-post">{{ $article->short_description }}</p>
 
         </div><!-- /.blog-post -->
